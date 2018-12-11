@@ -1,5 +1,5 @@
 
-# Understanding Principle Component Analysis 
+# Understanding Principal Component Analysis 
 
 ## Introduction
 PCA could be very counter intuitive to start with. In this lesson, we shall simply attempt to develop an intuition around PCA in terms of dimension reduction and visualization of reduced dimensions. We shall look at a few simple examples in 1D and 2D domains to help you get a clear understanding of what we mean by explained variances, rotation of axis, derived features (components) etc. With this understanding, as we move towards implementing PCA is a number of different contexts, it would be much easier for you to picture what is happening behind the scenes.
@@ -7,7 +7,7 @@ PCA could be very counter intuitive to start with. In this lesson, we shall simp
 ## Objectives
 You will be able to:
 - Develop a clear intuition around how PCA reduces dimensions
-- Understand principle components, what do they represent and how many components do we need
+- Understand principal components, what do they represent and how many components do we need
 - Understand the motivation behind mandatory data normalization prior to PCA
 
 ## What is Principal Component Analysis ?
@@ -65,7 +65,7 @@ PCA picks the 1D purple line while ensuring following:
 
 2. __Minimize__ the square of red-green distance (i.e. euclidiean squared distance of blue lines), using following formula: $$||x_{n}-\tilde{x_{n}}||^2$$
 
-As a last step, the image on the right shows the original 2D data transformed from $(x_{1},x_{2})$ onto 1D, $u_{1}$ space. This new feature subspace is called __First Principle Component__. 
+As a last step, the image on the right shows the original 2D data transformed from $(x_{1},x_{2})$ onto 1D, $u_{1}$ space. This new feature subspace is called __First Principal Component__. 
 
 
 This intuition of PCA projecting 2D data onto a 1D line with __rotation__ can also generalize similarly to projecting 3D data onto a 2D plane shown below.
@@ -76,7 +76,7 @@ This intuition of PCA projecting 2D data onto a 1D line with __rotation__ can al
 
 In above figure, PCA requires two principal components $(u_{1},u_{2})$ to project 3D data from $(R,G,B)$ space to 2D, $(u_{1},u_{2})$ space. 
 
-### What are Principle Components
+### What are Principal Components
 
 A principal component is a normalized linear combination of the original predictors in a data set. In image above, u1 and u2 are the principal components (otherwise, referred to as PC1 and PC2). IF we have a dataset containing features $X_1, X_2...,X_n$
 
@@ -91,14 +91,14 @@ $$u_1 = Φ_{11}X_1 + Φ_{21}X_2 + Φ_{31}X_3 + .... +Φ_{n1}X_n$$
 
 The __First Principal Component__ ($u_{1}$ above) is found in the direction of highest variability and is a linear combination of the original features that captures the most variation in the data.Larger the variability captured in first component, larger the information captured by component. No other component can have variability higher than first principal component. The first principal component results in a line which is closest to the data i.e. it minimizes the sum of squared distance between a data point and the line.
 
-The __Second Principal Component__ ($u_{2}$ above) is __uncorrealted__ with first principle compoenent $u_{1}$ (that is $u_{1}$ is "ORTHOGONAL" to $u_{2}$). It is also a linear combination of the original features that captures the second most variation in the data. It can be computed as:
+The __Second Principal Component__ ($u_{2}$ above) is __uncorrealted__ with first principal compoenent $u_{1}$ (that is $u_{1}$ is "ORTHOGONAL" to $u_{2}$). It is also a linear combination of the original features that captures the second most variation in the data. It can be computed as:
 
 $$u_2 = Φ_{12}X_1 + Φ_{22}X_2 + Φ_{32}X_3 + .... +Φ_{n2}X_n$$
 
 *Notice the direction of the components u1 and u2 sbove, as expected they are orthogonal. This suggests the correlation b/w these components in zero.*
 
 
-### How many principle components can we have ?
+### How many principal components can we have ?
 
 >The number of possible principal components is equal to the original dimension of the data. In order to reduce the dimensionality of a dataset, we drop the principal components that explain the lowest amounts of variation in the data. 
 
@@ -135,4 +135,4 @@ Next we shall look into steps necessary to perform PCA to successfully reduce th
 
 ## Summary 
 
-In this lesson we developed an intiution behind dimensionality reduction with PCA. We looked at a few very simple examples to see how PCA creates new dimensions (features) called principle components that attempt to capture the maximum variance in a given dataset. We looked at why normalization prior to PCA is standard approach. Next we shall look at the steps necessary to run a PCA experiment and achieve desired results. 
+In this lesson we developed an intiution behind dimensionality reduction with PCA. We looked at a few very simple examples to see how PCA creates new dimensions (features) called principal components that attempt to capture the maximum variance in a given dataset. We looked at why normalization prior to PCA is standard approach. Next we shall look at the steps necessary to run a PCA experiment and achieve desired results. 
